@@ -1,0 +1,23 @@
+services:
+  mysqlservice:
+    image: mysql:latest
+    container_name: mysql-container
+    restart: always
+    network_mode: host
+    hostname: localhost
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: 'root'
+      MYSQL_USERNAME: 'root'
+
+  shopping:
+    container_name: shopping
+    build: ./shopping
+    hostname: localhost
+    network_mode: host
+    ports:
+      - 9090:9090
+    depends_on:
+      - mysqlservice
+    restart: always
