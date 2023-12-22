@@ -74,6 +74,8 @@
 				</configuration>
 			</plugin>
 		</plugins>
+
+		<finalName>shopping_shop</finalName>
 	</build>
 
 </project>
