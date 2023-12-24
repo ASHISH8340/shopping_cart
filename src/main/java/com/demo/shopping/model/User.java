@@ -25,7 +25,7 @@ public class User {
     private String email;
     private String password;
 
-    private Date date_of_birth;
+    private double balance;
 
 //    @OneToOne(cascade = CascadeType.ALL)
 //    @JoinColumn(name = "address_id_fk")

@@ -21,7 +21,6 @@ public class UserDto {
     private String name;
     private String email;
     private String password;
-    @JsonFormat(pattern = "dd-MM-yyyy")
-    private Date date_of_birth;
+    private double balance;
     private List<Address> addresses = new ArrayList<>();
 }
