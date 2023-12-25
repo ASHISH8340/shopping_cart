@@ -23,9 +23,11 @@ public class User {
 
     private String name;
     private String email;
-    private String password;
 
     private double balance;
+    private String password;
+
+
 
 //    @OneToOne(cascade = CascadeType.ALL)
 //    @JoinColumn(name = "address_id_fk")

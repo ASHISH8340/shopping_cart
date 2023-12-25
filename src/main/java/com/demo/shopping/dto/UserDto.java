@@ -21,6 +21,6 @@ public class UserDto {
     private String name;
     private String email;
     private String password;
-    private double balance;
+   private double balance;
     private List<Address> addresses = new ArrayList<>();
 }

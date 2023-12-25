@@ -45,5 +45,16 @@ public class UserController {
         return new ResponseEntity<>(userService.deleteUser(userId),HttpStatus.GONE);
     }
 
+    @GetMapping("{userId}")
+    public UserDto getByUserId(@PathVariable int userId){
+        return (userService.getUserById(userId));
+}
+
+    @PutMapping("/updateUser/{userId}")
+    public UserDto getByUserId(@PathVariable int userId,@RequestBody UserDto userDto){
+        return(userService.updateByUserId(userId,userDto));
+    }
+
+
 
 }

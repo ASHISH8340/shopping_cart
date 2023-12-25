@@ -11,4 +11,8 @@ public interface UserService {
     PageableResponse<UserDto> getAllUser(int pageNumber, int pageSize, String sortBy,String sortDir);
 
     Object deleteUser(int userId);
+
+    UserDto getUserById(int userId);
+
+    UserDto updateByUserId(int userId,UserDto userDto);
 }

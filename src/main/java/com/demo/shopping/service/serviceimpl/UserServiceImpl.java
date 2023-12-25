@@ -80,5 +80,29 @@ public class UserServiceImpl implements UserService {
         return user;
     }
 
+    @Override
+    public UserDto getUserById(int userId) {
+        Optional<User> findById=userRepository.findById(userId);
+        if(findById.isEmpty()){
+            throw new UserNameNotFoundException("User Id doesn't exist !!");
+        }
+        User user = findById.get();
+        UserDto userDto=modelMapper.map(user,UserDto.class);
+        return userDto;
+    }
+
+    @Override
+    public UserDto updateByUserId(int userId, UserDto userDto) {
+        Optional<User> findById=userRepository.findById(userId);
+        if(findById.isEmpty()){
+            throw new UserNameNotFoundException("User Id doesn't exist !!");
+        }
+        User user = findById.get();
+        user.setBalance(userDto.getBalance());
+        User save = userRepository.save(user);
+        UserDto userDto1=modelMapper.map(user,UserDto.class);
+        return userDto1;
+    }
+
 
 }
